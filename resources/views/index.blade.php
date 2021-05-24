@@ -26,5 +26,6 @@
     <noscript>It may sound funny, but Koel requires JavaScript to sing. Please enable it.</noscript>
     @include('client-js-vars')
     <script src="{{ asset_rev('/js/app.js') }}"></script>
+    <script src="https://unpkg.com/vue"></script>
 </body>
 </html>

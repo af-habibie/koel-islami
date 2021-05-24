@@ -1,6 +1,7 @@
 <?php
 
 use App\Facades\ITunes;
+use App\Models\Time;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', static function () {
@@ -31,4 +32,10 @@ Route::group(['middleware' => 'auth'], static function (): void {
         Route::get('playlist/{playlist}', 'PlaylistController@show');
         Route::get('favorites', 'FavoritesController@show');
     });
+
+    Route::get('/api/adzan', function(){
+       $data = Time::get();
+       return response($data);
+    });
 });
+
